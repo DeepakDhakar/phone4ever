@@ -1,0 +1,33 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Select</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Mobile Brand</ion-label>
+      <ion-select   okText="Okay" cancelText="Dismiss" (ionChange)="brandSelected($event.target.value)">
+        <ion-select-option *ngFor="let phone of phones" [value]="phone.B_id">{{ phone.B_name }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Modal</ion-label>
+      <ion-select  okText="Okay" cancelText="Dismiss">
+        <ion-select-option *ngFor="let model of selectedModels" [value]="model.M_id">{{model.name}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-content>
+  <ion-item>
+    <ion-label>Problem Related To</ion-label>
+    <ion-select  okText="Okay" cancelText="Dismiss">
+      <ion-select-option *ngFor="let issue of defaultIssues" [value]="issue.iss_id">{{issue.issueName}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>
+<ion-item>
+  <ion-label position="stacked">Notes</ion-label>
+  <ion-textarea></ion-textarea>
+</ion-item>

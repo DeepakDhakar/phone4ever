@@ -1,0 +1,25 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>LogIn</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-list lines="full" class="ion-no-margin ion-no-padding">
+    <ion-item>
+      <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Password<ion-text color="danger">*</ion-text>
+      </ion-label>
+      <ion-input required type="text" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-item><a routerLink="/forgot-password">Forgot Password</a></ion-item>
+  <ion-item><a routerLink="/register">Register</a></ion-item>
+  <ion-item><a (click)="loginUserGoogle()">Google Login </a></ion-item>
+  <div class="ion-padding">
+    <ion-button expand="block" type="submit" class="ion-no-margin" (click)="loginUser()">Login</ion-button>
+  </div>
+</ion-content>
